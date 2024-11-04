@@ -1,0 +1,53 @@
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="przelicznik.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Picker x:Name="pickerSource"
+                    Title="Wybierz walutę źródłową">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>PLN</x:String>
+                        <x:String>EUR</x:String>
+                        <x:String>GBP</x:String>
+                        <x:String>USD</x:String>
+                        <x:String>SEK</x:String>
+                        <x:String>NOK</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="pickerTarget"
+                    Title="Wybierz walutę docelową">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>PLN</x:String>
+                        <x:String>EUR</x:String>
+                        <x:String>GBP</x:String>
+                        <x:String>USD</x:String>
+                        <x:String>SEK</x:String>
+                        <x:String>NOK</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Wprowadź kwotę do przeliczenia:" />
+            <Entry x:Name="amountEntry"
+                   Placeholder="Kwota"
+                   Keyboard="Numeric" />
+
+            <Button
+                Text="Przelicz"
+                Clicked="OnConvertClicked"
+                HorizontalOptions="Fill" />
+
+            <Label x:Name="resultLabel" Text="Wynik przeliczenia pojawi się tutaj" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
